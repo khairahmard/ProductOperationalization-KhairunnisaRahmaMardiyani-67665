@@ -16,7 +16,11 @@ df['release_year'] = df['releaseDate'].str[:4].astype('int64')
 
 @app.get("/")
 def read_root():
-	return data
+	return {"endpoints":{
+		"/countUnitSong : menampilkan jumlah trakcs setiap unit",
+		"/albumTracks` : menampilkan 5 album dengan jumlah lagu terbanyak", 
+		"/albumPrice` : menampilkan 5 unit yang memiliki rata-rata harga album termahal"}
+	}
 
 #menampilkan jumlah trakcs setiap unit
 @app.get("/countUnitSong")
