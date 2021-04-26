@@ -30,7 +30,7 @@ def read_countUnitSong():
 	api = result_2 = df.groupby(['collectionName'])[['trackName']].count().rename(columns={'trackName':'count'}).sort_values(['count'], ascending=False).head(5)
 	return api.to_dict(orient='dict')
 
-#menampilkan 5 rata-rata tertinggi harga album
+#menampilkan 5 unit yang memiliki rata-rata harga album termahal
 @app.get("/albumPrice")
 def read_countUnitSong():
 	api = df.groupby(['artistName'])[['collectionPrice']].mean().rename(columns={'collectionPrice':'mean'}).sort_values(['mean'], ascending=False).head(5)
